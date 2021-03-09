@@ -15,6 +15,28 @@ def computer_guess(x):
 		elif feedback == 'l':
 			low = guess + 1
 
-	print(f"The computer guessed your number {guess} correctly!!")
+	print(f"\nThe computer guessed your number {guess} correctly!")
 
-computer_guess(100)
+def replay():
+    answer = input('Do you want to play again? Enter yes or no: ').lower()
+    return answer =='yes'
+
+print("You're playing a guessing game with the computer! Pick any whole number between 1 and 100 right \
+now and the computer will start guessing your number. Let the computer know if their guess is too high, \
+too low, or correct! \n")
+
+
+while True:
+	start_game = input("Are you ready to play? Enter yes or no: ").lower()
+	if start_game == 'yes':
+		play_game = True
+	else:
+		play_game = False
+	
+	while play_game:
+		computer_guess(100)
+		play_game = False
+
+
+	if not replay():
+		break
